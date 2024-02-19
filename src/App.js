@@ -194,10 +194,10 @@ function App() {
                  {Ten.length>0?Ten.map((item,index)=><tr key={index}><td>{item.id}</td><td id='title'>{item.title}</td><td id='desc'>{item.description}</td><td>{item.price}$</td><td>{item.category}</td><td> {item.sold?"true":"false"}</td><td><img alt='product_image' src={item.image}  id='productImage' ></img></td></tr>):<tr><td>No data found...</td></tr>}
               </tbody>
             </table>
-            <div className='d-flex flex-wrap'>
-                <button className='btn btn-dark col-2 mx-auto' onClick={()=>handleTableData('prev')}>Previous</button>
+            <div className='d-flex flex-wrap' id='pagination'>
+                <button className='btn btn-dark col-lg-2 col-md-3 col-sm-12 col-xs-12 mx-auto my-2' onClick={()=>handleTableData('prev')}>Previous</button>
                 <div className='col text-center'>{pagination!==""?pagination:page+1}</div>
-                <button className='btn btn-dark col-2 mx-auto' onClick={()=>handleTableData('next')}>Next</button>
+                <button className='btn btn-dark col-lg-2 col-md-3 col-sm-12 col-xs-12 mx-auto my-2' onClick={()=>handleTableData('next')}>Next</button>
                 </div>
             </div>
            
