@@ -73,6 +73,27 @@ padding: 1rem;
   text-wrap: nowrap;
   
 }
+#spin {
+  display: grid;
+  align-items: center;
+  animation: rotateIcon   infinite 1s linear;
+  
+  
+ 
+}
+#spin i{
+  font-size: 1.7rem;
+
+}
+@keyframes rotateIcon {
+  from{transform: rotate(0deg);
+
+  }
+  to{transform: rotate(360deg);
+
+  }
+  
+}
 @media screen and  (max-width:768px) {
   .rotateMe{
     font-size: 10px;

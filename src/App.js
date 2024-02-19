@@ -14,10 +14,12 @@ function App() {
    const [search,setSearch]=useState(false);
    const [searchTable,setSearchTable]=useState([]);
    const [selectedMonth,setSelectedMonth]=useState("March");
+   const [spinner,setSpinner]=useState(false);
 
     
  async function getTransactions(){
     let month=document.getElementById("select").value;
+    setSpinner(true);
     
    let getDataByMonth=[];
     let totSales=0;
@@ -94,7 +96,7 @@ function App() {
         setSelectedMonth(monthInWords[month-1]);
        
    
-    
+        setSpinner(false);
 
   }
 
@@ -159,9 +161,9 @@ function App() {
            <h1 className="text-center">Transaction Dashboard</h1>
            <div  >
             <div className='d-flex flex-wrap justify-content-between my-2 border rounded p-3' >
-            <input type="text" placeholder="Search transaction" className='my-2 col-lg-6 col-md-7 col-xs-12 col-sm-12 p-2 ' id='search' onChange={(event)=>searchTransaction(event)} ></input>
-            
-            <select className="  col-lg-2 col-md-3  col-xs-12 col-sm-12   text-center " id='select'  onChange={getTransactions}><option value={3} >Select Month</option>
+            <input type="text" placeholder="Search transaction" className='my-2 col-lg-6 col-md-7 col-xs-12 col-sm-12 p-2 my-2' id='search' onChange={(event)=>searchTransaction(event)} ></input>
+            <span id='spin'>{ spinner?<i class="fa-solid fa-circle-notch"></i>:"" }</span>
+            <select className="  col-lg-2 col-md-3  col-xs-12 col-sm-12   text-center my-2" id='select'  onChange={getTransactions}><option value={3} >Select Month</option>
             <option value={1}>January</option>
             <option value={2}>February</option>
             <option value={3}>March</option>
