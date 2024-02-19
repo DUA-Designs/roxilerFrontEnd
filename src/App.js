@@ -25,9 +25,9 @@ function App() {
     let leftover=0;
     let bars={"one":0,"two":0,"three":0,"four":0,"five":0,"six":0,"seven":0,"eight":0,"nine":0,"ten":0}
     
-     const response=await axios.get(`http://localhost:8000/getTransactions?month=${month}`);
+     const response=await axios.get(`https://roxilerback-end.onrender.com/getTransactions?month=${month}`);
      const data=response.data;
-     const combined =await axios.get(`http://localhost:8000/getCombinedData?month=${month}`);
+     const combined =await axios.get(`https://roxilerback-end.onrender.com/getCombinedData?month=${month}`);
       console.log(combined.data);
     for(let i in data){
            
